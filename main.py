@@ -1,50 +1,51 @@
-# dictionary or list that will contain all information required for repair order
-# ro = ['Tech Name: ', 'Customer: ', 'Unit Number: ', 'VIN: ', 'Make: ', 'Model: ', 'Miles: ', 'Engine Hours: ', 'Complaint: ']
+# dictionary that will contain all inputs to request a repair order
+repair_order = {}
 
-repairOrder = {"Tech Name":input("Tech Name: "), "Customer":input("Customer: "), "Unit Number":input("Unit Number: "), "VIN":input("VIN: "), "Make":input("Make: "), "Model":input("Model: "), "Miles":input("Miles: "), "Engine Hours":input("Engine Hours: "), "Complaint":input("Complaint: ")}
-print (repairOrder)
-# name = input('Name: ')
-# repairOrder.insert(1, name)
-# customer = input('Customer: ')
-# repairOrder.insert(3, customer)
-# unit = input('Unit Number: ')
-# repairOrder.insert(5, unit)
+# tech name
+name = input('Technician: ')
+repair_order['Technician Name:'] = name
 
-# while True:
-#     try:
-#         vin = input('VIN: ')
+# customer info (this will need to also include address, may eventualy )
+cust = input ('Customer: ')
+repair_order['Customer: '] = cust
 
-#         if len(vin) > 17:
-#             print('VIN must be 17 digits, please retype VIN: ')
-#         elif len(vin) < 17:
-#             print('VIN must be 17 digits, please retype VIN: ')
-#         else:
-#             break
+# info of vehicle being worked on
+unit = input('Unit Number: ')
+repair_order['Unit Number: '] = unit
+# vin length verification
+while True:
+    try:
+        vin = input('VIN: ').upper()
+
+        if len(vin) > 17:
+            print('VIN must be 17 digits, please retype VIN: ')
+        elif len(vin) < 17:
+            print('VIN must be 17 digits, please retype VIN: ')
+        else:
+            break
 
 
-#     except:
-#         print('VIN must be 17 digits, please retype VIN: ')
-# #     # except ValueError:
-# #     #     print('VIN must be 17 digits, please enter VIN: ')
-# #     # continue
-# # if len(vin) == 17:
-# #     print ('VIN must be 17 digits, please enter VIN: ')
-# # else:
-# #     break
+    except:
+        print('VIN must be 17 digits, please retype VIN: ')
+repair_order ['VIN: '] = vin
 
-# repairOrder.insert(7, vin)
-# make = input('Make: ')
-# repairOrder.insert(9, make)
-# model = input('Model: ')
-# repairOrder.insert(11, model)
-# miles = input('Miles: ')
-# repairOrder.insert(13, miles)
-# hrs = input('Engine Hours: ')
-# repairOrder.insert(15, hrs)
-# complaint = input('Customer Complaint: ')
-# repairOrder.insert(17, complaint)
+make = input('Make: ')
+repair_order['Make: '] = make
 
-# for i in range(len(repairOrder)):
-#     repairOrder[i] = repairOrder[i].upper()
+model = input('Model: ')
+repair_order['Model: '] = model
 
-# print (*repairOrder,sep='\n' )
+miles = input('Vehicle milage: ')
+repair_order['Vhicle Milage: '] = miles
+
+hrs = input('Engine Hours: ')
+repair_order['Engine Hours: '] = hrs
+
+complaint = input('Customer complaint: ')
+repair_order['Customer Complaint: '] = complaint
+
+print (*repair_order.items(), sep='\n')
+
+# ro_upper = dict((k.upper(), v) for k, v in repair_order .items())
+
+
