@@ -4,6 +4,7 @@
 #
 # also will need to autofill model instead of asking for user input in main program
 
+
 vin = ()
 while True:
     try:
