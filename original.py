@@ -1,4 +1,4 @@
-# this file is just a mess, mostly unusable code. saving for reference
+# this file is just a mess, mostly unusable code at this point. saving for reference
 
 # dictionary or list that will contain all information required for repair order
 # ro = ['Tech Name: ', 'Customer: ', 'Unit Number: ', 'VIN: ', 'Make: ', 'Model: ', 'Miles: ', 'Engine Hours: ', 'Complaint: ']
