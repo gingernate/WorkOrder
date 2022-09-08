@@ -47,7 +47,11 @@ repair_order['Engine Hours: '] = hrs
 complaint = input('Customer complaint: ')
 repair_order['Customer Complaint: '] = complaint
 
-print (*repair_order.items(), sep='\n')
+print('Repair Order information for tech: ' + name)
+for key, value in repair_order.items():
+    print("{}: {}".format(key, value))
+
+# print (*repair_order.items(), sep='\n')
 
 # ro_upper = dict((k.upper(), v) for k, v in repair_order .items())
 
