@@ -38,10 +38,28 @@ repair_order['Make: '] = make
 model = input('Model: ')
 repair_order['Model: '] = model
 
-miles = input('Vehicle milage: ')
+# miles = input('Vehicle milage: ')
+while True:
+    try:
+        miles = int(input('Vehicle Miles: '))
+        if miles < 1:
+            print ('Vehicle milage cannot be set to 0')
+        elif miles > 0:
+            break
+    except:
+        print("That's not a valid input!")
 repair_order['Vhicle Milage: '] = miles
 
-hrs = input('Engine Hours: ')
+# hrs = input('Engine Hours: ')
+while True:
+    try:
+        hrs = int(input('Engine Hours: '))
+        if hrs < 1:
+            print ('Engine hours cannot be set to 0')
+        elif hrs > 0:
+            break
+    except:
+        print("That's not a valid input!")
 repair_order['Engine Hours: '] = hrs
 
 complaint = input('Customer complaint: ')
@@ -54,5 +72,4 @@ for key, value in repair_order.items():
 # print (*repair_order.items(), sep='\n')
 
 # ro_upper = dict((k.upper(), v) for k, v in repair_order .items())
-
 
