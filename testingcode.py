@@ -5,15 +5,15 @@
 repair_order = {}
 
 # tech name
-name = input('Technician: ')
+name = input('Technician: ').upper()
 repair_order['Technician Name:'] = name
 
 # customer info (this will need to also include address, may eventualy )
-cust = input ('Customer: ')
+cust = input ('Customer: ').upper()
 repair_order['Customer: '] = cust
 
 # info of vehicle being worked on
-unit = input('Unit Number: ')
+unit = input('Unit Number: ').upper()
 repair_order['Unit Number: '] = unit
 # vin length verification
 while True:
@@ -32,10 +32,10 @@ while True:
         print('VIN must be 17 digits, please retype VIN: ')
 repair_order ['VIN: '] = vin
 
-make = input('Make: ')
+make = input('Make: ').upper()
 repair_order['Make: '] = make
 
-model = input('Model: ')
+model = input('Model: ').upper()
 repair_order['Model: '] = model
 
 # miles = input('Vehicle milage: ')
@@ -65,10 +65,9 @@ repair_order['Engine Hours: '] = hrs
 complaint = input('Customer complaint: ')
 repair_order['Customer Complaint: '] = complaint
 
-print('Repair Order information for tech: ' + name)
-for key, value in repair_order.items():
-    print("{}: {}".format(key, value))
 
-# print (*repair_order.items(), sep='\n')
-
-# ro_upper = dict((k.upper(), v) for k, v in repair_order .items())
+with open (vin, 'w') as f:
+    for key, value in repair_order.items():
+        f.write('RO request from: ' + name.upper())
+        f.write(cust.upper() + ' ' + unit.upper())
+        f.write("{}: {}\n".format(key, value))
